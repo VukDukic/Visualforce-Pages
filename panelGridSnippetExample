@@ -1,0 +1,12 @@
+<apex:panelGrid columns="3" cellspacing="16">
+  <apex:commandLink action="{!Previous}" value="Previous Page " rendered="{!HasPrevious}"/>
+  <apex:commandLink action="{!Next}" value"Next Page " rendered="{!HasNext}"/>
+  <apex:outputPanel>
+    <apex:outputText value="Records per page: "/>
+      <apex:selectList value="{!PageSize}" size="1">
+        <apex:selectOption itemValue="{!10}" itemLabel="10"/>
+        <apex:selectOption itemValue="{!20}" itemLabel="20"/>
+      </apex:selectList>
+    <apex:commandButton action="{!NULL}" value="Update"/>
+  </apex:outputPanel>
+</apex:panelGrid>
