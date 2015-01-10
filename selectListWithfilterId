@@ -1,0 +1,4 @@
+<apex:selectList value="{!filterId}" size="1">
+  <apex:selectOptions value="{!listViewOptions}"/>
+</apex:selectList>
+<apex:commandButton value="Go" action="{!NULL}"/>
