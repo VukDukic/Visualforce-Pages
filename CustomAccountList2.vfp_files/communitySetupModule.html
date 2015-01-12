@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0051)https://success.salesforce.com/communitySetupModule -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="stub(1).js" type="text/javascript"></script><script src="NetworkTracking.js" type="text/javascript"></script><script>try{ NetworkTracking.init('/_ui/networks/tracking/NetworkTrackingServlet', 'network', '06630000000xnCS'); }catch(x){}try{ NetworkTracking.logPageView();}catch(x){}</script><meta http-equiv="PRAGMA" content="NO-CACHE">
+<meta http-equiv="Expires" content="Mon, 01 Jan 1990 12:00:00 GMT">
+
+<title>Community</title>
+<meta charset="utf-8">
+
+<style>
+/*** RESET ***/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;font-style:normal} body {line-height:1} ol, ul {list-style:none} blockquote, q {quotes:none} blockquote:before, blockquote:after, q:before, q:after {content:'';content:none} :focus {outline:1px dotted #333} ins {text-decoration:none} del {text-decoration:line-through} table {border-collapse:collapse;border-spacing:0}
+input[type="checkbox"] {margin:0;padding:0;vertical-align:text-bottom} textarea {margin:0}
+/*** END RESET ***/
+
+.clear{
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    display: block;
+    }
+
+/*** START PAGE LEVEL ***/
+body {
+    margin:0;
+    padding:0;
+    font-size: 12px;
+    font-family:Arial,Helvetica,sans-serif;
+    color:#555;
+    background-color:#ffffff;
+    line-height: 125%;
+    }
+a {
+    text-decoration: none;
+    color: #015BA7;
+    }
+a:hover, a:focus {
+    text-decoration: underline;
+    }
+h2 {
+    color:#636363;
+    font-weight: bold;
+    font-size: 13px;
+    padding-top:3px;
+}
+.button-cmty {
+    background: #008cd1; /* Old browsers */
+    background: -moz-linear-gradient(top,  #008cd1 0%, #01a5f8 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#008cd1), color-stop(100%,#01a5f8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #008cd1 0%,#01a5f8 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #008cd1 0%,#01a5f8 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #008cd1 0%,#01a5f8 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #008cd1 0%,#01a5f8 100%); /* W3C */
+    padding: 4px 10px;
+    border: 1px solid #008dd4;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    vertical-align: middle;
+    font-size:11px;
+    }
+.button:hover {
+    text-decoration: none;
+    }
+.ideashighlight {
+    background-color: #F7F7AB;
+    }
+
+/*** END PAGE LEVEL ***/
+
+
+/*** WIDGET LAYOUT ***/
+#layoutdims {
+    clear:both;
+    background:#eee;
+    border-top:4px solid #000;
+    margin:0;
+    padding:6px 15px !important;
+    text-align:right;
+    }
+/* column container */
+.colmask {
+    position:relative;  /* This fixes the IE7 overflow hidden bug */
+    clear:both;
+    float:left;
+    width:100%;         /* width of whole page */
+    overflow:hidden;        /* This chops off any overhanging divs */
+}
+/* common column settings */
+.colright,
+.colmid,
+.colleft {
+    float:left;
+    width:100%;         /* width of page */
+    position:relative;
+}
+.col1,
+.col2,
+.col3 {
+    float:left;
+    position:relative;
+    padding:5px 0 15px 0;  /* no left and right padding on columns, we just make them narrower instead
+                    only padding top and bottom is included here, make it whatever value you need */
+    }
+.col1 p,.col2 p , .col3 p {
+    padding-top:4px;
+    }
+
+/* 3 Column settings */
+.threecol {
+    }
+.threecol .colmid {
+    right:34%;          /* width of the right column */
+    border-right:1px solid #eee;
+    }
+.threecol .colleft {
+    right:34%;          /* width of the middle column */
+    border-right:1px solid #eee;
+    }
+.threecol .col1 {
+    width:31%;          /* width of center column content (column width minus padding on either side) */
+    left:102%;          /* 100% plus left padding of center column */
+    }
+.threecol .col2 {
+    width:30%;          /* Width of left column content (column width minus padding on either side) */
+    left:39%;           /* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+    }
+.threecol .col3 {
+    width:29%;          /* Width of right column content (column width minus padding on either side) */
+    left:75%;           /* Please make note of the brackets here:
+                    (100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
+    }
+/*** END WIDGET LAYOUT ***/
+
+/*** FOOTER ***/
+.footerouter {
+    clear:both;
+    width:100%;
+    border-top:1px solid #eee;
+    }
+.footer {
+    width:100%;
+    padding-top:10px;
+    margin:auto;
+    }
+.footer img {
+    vertical-align:middle;
+    }
+/*** END FOOTER ***/
+
+</style>
+</head>
+
+<body>
+
+<div class="colmask threecol">
+    <div class="colmid">
+        <div class="colleft">
+
+
+            <div class="col1">
+                
+                <h2>Find Answers</h2>
+                <p>Post your questions to the Community.</p><br>
+                <p><a class="button-cmty" href="https://success.salesforce.com/answers" target="_blank">Ask a Question</a></p>
+                
+            </div>
+
+            
+            <div class="col2">
+                
+                <h2>Resources</h2>
+                <p><a href="https://success.salesforce.com/collaborate" target="_blank">Collaborate &amp; Discuss</a><br>
+                Join the conversation.</p><br>
+                <p><a href="https://success.salesforce.com/userGroups" target="_blank">User Groups</a><br>
+                Connect with customers in your area.</p>
+                
+            </div>
+
+
+            <div class="col3">
+                
+                <h2>Contribute Ideas</h2>
+                <p>Share &amp; vote for ideas to improve the product.</p><br>
+                <p><a class="button-cmty" href="https://success.salesforce.com/ideaSearch" target="_blank">Post an Idea</a></p>
+                
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="footerouter">
+    <div align="center" class="footer">
+        <img align="absmiddle" height="17" src="icon17x17_appforce_release_watch.gif" width="17"> <a href="http://www.salesforce.com/customer-resources/releases/" target="_blank">Release Resources</a>
+
+        
+
+    </div>
+</div>
+
+
+</body></html>

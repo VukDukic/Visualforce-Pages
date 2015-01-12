@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0046)https://appexchange.salesforce.com/setupModule -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" async="" id="eloquaScript" src="elqCfg.min.js"></script><script src="stub(2).js" type="text/javascript"></script><meta http-equiv="PRAGMA" content="NO-CACHE">
+<meta http-equiv="Expires" content="Mon, 01 Jan 1990 12:00:00 GMT">
+
+	  <link href="setup-module.css" rel="stylesheet" type="text/css">
+	  <script src="setupmodule.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+      /* <![CDATA[ */
+      
+    var b_version = navigator.appVersion;
+     // we'll make the default value for ieversion 10, so the ie6 stylesheet doesn't get loaded by default
+        // and the pie code doesn't get loaded by default.
+     var ieversion = 10;
+     // here we'll find the real ieversion
+     if (b_version.indexOf('MSIE')!=-1 && b_version.indexOf('Opera')==-1) { // test for MSIE but not Opera;
+         var ieversion = b_version.substr(b_version.indexOf('MSIE') + 5, 1); // find MSIE browser version
+     }
+     // if ieversion is less than 7: load ie6 stylesheet.
+     if (ieversion < 7){
+         document.write('<link rel="stylesheet" type="text/css" href="/resource/1420591434000/layout/css/setup-appex-ie6.css" />');
+     }
+        // if ieversion is less than 9: load PIE.js code.
+        if (ieversion < 9){
+            document.write('<script type="text/javascript" src="/resource/1420591434000/layout/js/PIE.js"><\/script>');
+        }
+
+
+  var slider1;
+     var autoSlidePause = 5000;
+       
+     $(document).ready(function(){    
+     
+      if (window.PIE) {
+       $('.rounded').each(function() {
+              PIE.attach(this);
+          });
+      }
+      
+      numberOfPromotions = $('#slider1').children().size();
+         if(numberOfPromotions == 0) return null;
+        
+         if(numberOfPromotions == 1){
+           slider1 = $('#slider1').bxSlider({
+               controls: false
+           });
+           return null;
+         }
+         else{
+           slider1 = $('#slider1').bxSlider({
+               infiniteLoop: true,
+               prevText: '&#160;',
+               nextText: '&#160;',
+               pager: true,  
+               pagerSelector: '#pager1'
+           });
+           $('#pager1-outer').appendTo($('#slider1').parent().parent());
+           $($('#slider1').parent().parent().children('.bx-prev').appendTo($('#slider1').parent().parent()));
+           $($('#slider1').parent().parent().children('.bx-next').appendTo($('#slider1').parent().parent()));
+           
+           var ulId = $('.bx-wrapper').children(':first').children('ul:first').attr('id');
+           var autoShowIntervalId1 = setInterval("autoPlayShow(slider1)", autoSlidePause); 
+           
+           $('.bx-wrapper').mouseover( function() {
+               var ulId = $(this).children(':first').children('ul:first').attr('id');
+               if(autoShowIntervalId1 && ulId == 'slider1') {
+                   clearInterval(autoShowIntervalId1);
+               }
+           });
+ 
+           $('.bx-wrapper').mouseout( function() {
+               var ulId = $(this).children(':first').children('ul:first').attr('id');
+               if (ulId == 'slider1') {
+                   autoShowIntervalId1 = setInterval("autoPlayShow(slider1)", autoSlidePause); 
+               }
+           });   
+           
+          }
+           
+       });
+       
+       function autoPlayShow(slider) {
+           slider.goToNextSlide();
+       }
+   /* ]]> */
+   </script>  
+  	
+	</head>
+	
+	<body>
+	
+	<div class="custom-doc-outer">
+	  <div class="custom-doc-inner small-doc-inner">
+	    
+	    <div class="slider-small-outer">
+	      <div class="slider-small-header">
+	        <a href="https://appexchange.salesforce.com/" target="_blank">
+	        	<div class="logo"></div>
+	        </a>
+	        <h1>Recommended Apps</h1>
+	        <a class="next-to-h1" href="https://appexchange.salesforce.com/" target="_blank">Show All</a>
+	
+	      </div>
+	      <div class="bx-wrapper" style="width:190px; position:relative;"><div class="bx-window" style="position:relative; overflow:hidden; width:190px;"><ul class="slider-small" id="slider1" style="width: 999999px; position: relative; left: -189.985778808594px;"><li style="width: 160px; float: left; list-style: none;">
+		          <div class="img"><span id="j_id0:j_id3:3:j_id5">
+    
+    <div class="logo-app logo-app-small "><div id="j_id0:j_id3:3:j_id5:logoImage:logoImagePanelWa" class="img-div">
+            <a href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000016cxaEAA" id="logoLink-" target="_blank"><img id="j_id0:j_id3:3:j_id5:logoImage:logoWa" src="servlet.FileDownload" class="logo-img rounded"><img id="j_id0:j_id3:3:j_id5:logoImage:regularGlassWa" src="logo-app-glass.png" class="logo-img-glass noBorder">
+            </a></div>       
+    </div></span>
+		          </div>
+		          <div class="info">
+		            <a class="title" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000016cxaEAA" target="_blank">Native CPQ. Configure, Price,...</a>
+		            <span class="sub">bySteelBrick</span>
+		            <div class="rating-one-line">
+							<span class="rating-small rating-small-50" id="stars_3.0" title="4.9">&nbsp;</span>
+							<a href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000016cxaEAA&tab=r" id="stars1_3.0" target="_blank">
+								(81)
+							</a>
+					 </div>
+		          </div>
+		          <div class="text">SteelBrick Native CPQ simplifies configuration and ensures pricing &amp; sales quoting accuracy. CPQ...
+		          </div>
+		        </li>
+		        <li class="pager" style="width: 160px; float: left; list-style: none;">
+		          <div class="img"><span id="j_id0:j_id3:0:j_id5">
+    
+    <div class="logo-app logo-app-small "><div id="j_id0:j_id3:0:j_id5:logoImage:logoImagePanelWa" class="img-div">
+            <a href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000058hdfEAA" id="logoLink-" target="_blank"><img id="j_id0:j_id3:0:j_id5:logoImage:logoWa" src="servlet(1).FileDownload" class="logo-img rounded"><img id="j_id0:j_id3:0:j_id5:logoImage:regularGlassWa" src="logo-app-glass.png" class="logo-img-glass noBorder">
+            </a></div>       
+    </div></span>
+		          </div>
+		          <div class="info">
+		            <a class="title" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000058hdfEAA" target="_blank">Human Capital Management (HCM...</a>
+		            <span class="sub">byFinancialForce...</span>
+		            <div class="rating-one-line">
+							<span class="rating-small rating-small-45" id="stars_0.0" title="4.6">&nbsp;</span>
+							<a href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000058hdfEAA&tab=r" id="stars1_0.0" target="_blank">
+								(11)
+							</a>
+					 </div>
+		          </div>
+		          <div class="text">Say goodbye to using stand-alone, non-integrated solutions that don’t accommodate today’s global...
+		          </div>
+		        </li>
+		        <li class="pager" style="width: 160px; float: left; list-style: none;">
+		          <div class="img"><span id="j_id0:j_id3:1:j_id5">
+    
+    <div class="logo-app logo-app-small "><div id="j_id0:j_id3:1:j_id5:logoImage:logoImagePanelWa" class="img-div">
+            <a href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000016ZmCEAU" id="logoLink-" target="_blank"><img id="j_id0:j_id3:1:j_id5:logoImage:logoWa" src="servlet(2).FileDownload" class="logo-img rounded"><img id="j_id0:j_id3:1:j_id5:logoImage:regularGlassWa" src="logo-app-glass.png" class="logo-img-glass noBorder">
+            </a></div>       
+    </div></span>
+		          </div>
+		          <div class="info">
+		            <a class="title" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000016ZmCEAU" target="_blank">Adobe® EchoSign: Global Elect...</a>
+		            <span class="sub">byAdobe Systems</span>
+		            <div class="rating-one-line">
+							<span class="rating-small rating-small-50" id="stars_1.0" title="4.9">&nbsp;</span>
+							<a href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000016ZmCEAU&tab=r" id="stars1_1.0" target="_blank">
+								(3042)
+							</a>
+					 </div>
+		          </div>
+		          <div class="text">Start closing deals 5x faster today. Send, sign, track, and file contracts quickly and securely...
+		          </div>
+		        </li>
+		        <li class="pager" style="width: 160px; float: left; list-style: none;">
+		          <div class="img"><span id="j_id0:j_id3:2:j_id5">
+    
+    <div class="logo-app logo-app-small "><div id="j_id0:j_id3:2:j_id5:logoImage:logoImagePanelWa" class="img-div">
+            <a href="https://appexchange.salesforce.com/listingDetail?listingId=a0N30000003K37tEAC" id="logoLink-" target="_blank"><img id="j_id0:j_id3:2:j_id5:logoImage:logoWa" src="servlet(3).FileDownload" class="logo-img rounded"><img id="j_id0:j_id3:2:j_id5:logoImage:regularGlassWa" src="logo-app-glass.png" class="logo-img-glass noBorder">
+            </a></div>       
+    </div></span>
+		          </div>
+		          <div class="info">
+		            <a class="title" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N30000003K37tEAC" target="_blank">Check-in: Field Sales &amp; Field...</a>
+		            <span class="sub">byGPS Dashboard ...</span>
+		            <div class="rating-one-line">
+							<span class="rating-small rating-small-50" id="stars_2.0" title="4.9">&nbsp;</span>
+							<a href="https://appexchange.salesforce.com/listingDetail?listingId=a0N30000003K37tEAC&tab=r" id="stars1_2.0" target="_blank">
+								(10)
+							</a>
+					 </div>
+		          </div>
+		          <div class="text">Improve your sales performance with CHECK-in, an advanced sales analytics and performance...
+		          </div>
+		        </li>
+		        <li class="pager" style="width: 160px; float: left; list-style: none;">
+		          <div class="img"><span id="j_id0:j_id3:3:j_id5">
+    
+    <div class="logo-app logo-app-small "><div id="j_id0:j_id3:3:j_id5:logoImage:logoImagePanelWa" class="img-div">
+            <a href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000016cxaEAA" id="logoLink-" target="_blank"><img id="j_id0:j_id3:3:j_id5:logoImage:logoWa" src="servlet.FileDownload" class="logo-img rounded"><img id="j_id0:j_id3:3:j_id5:logoImage:regularGlassWa" src="logo-app-glass.png" class="logo-img-glass noBorder">
+            </a></div>       
+    </div></span>
+		          </div>
+		          <div class="info">
+		            <a class="title" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000016cxaEAA" target="_blank">Native CPQ. Configure, Price,...</a>
+		            <span class="sub">bySteelBrick</span>
+		            <div class="rating-one-line">
+							<span class="rating-small rating-small-50" id="stars_3.0" title="4.9">&nbsp;</span>
+							<a href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000016cxaEAA&tab=r" id="stars1_3.0" target="_blank">
+								(81)
+							</a>
+					 </div>
+		          </div>
+		          <div class="text">SteelBrick Native CPQ simplifies configuration and ensures pricing &amp; sales quoting accuracy. CPQ...
+		          </div>
+		        </li>
+	      <li style="width: 160px; float: left; list-style: none;">
+		          <div class="img"><span id="j_id0:j_id3:0:j_id5">
+    
+    <div class="logo-app logo-app-small "><div id="j_id0:j_id3:0:j_id5:logoImage:logoImagePanelWa" class="img-div">
+            <a href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000058hdfEAA" id="logoLink-" target="_blank"><img id="j_id0:j_id3:0:j_id5:logoImage:logoWa" src="servlet(1).FileDownload" class="logo-img rounded"><img id="j_id0:j_id3:0:j_id5:logoImage:regularGlassWa" src="logo-app-glass.png" class="logo-img-glass noBorder">
+            </a></div>       
+    </div></span>
+		          </div>
+		          <div class="info">
+		            <a class="title" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000058hdfEAA" target="_blank">Human Capital Management (HCM...</a>
+		            <span class="sub">byFinancialForce...</span>
+		            <div class="rating-one-line">
+							<span class="rating-small rating-small-45" id="stars_0.0" title="4.6">&nbsp;</span>
+							<a href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000058hdfEAA&tab=r" id="stars1_0.0" target="_blank">
+								(11)
+							</a>
+					 </div>
+		          </div>
+		          <div class="text">Say goodbye to using stand-alone, non-integrated solutions that don’t accommodate today’s global...
+		          </div>
+		        </li></ul></div><div class="pagination-outer-small" id="pager1-outer"><div class="pagination" id="pager1"><a id="pagerLink1" href="" class="pager-link pager-1 pager-active">1</a><a id="pagerLink2" href="" class="pager-link pager-2">2</a><a id="pagerLink3" href="" class="pager-link pager-3">3</a><a id="pagerLink4" href="" class="pager-link pager-4">4</a></div></div><a id="prev" href="" class="bx-prev">&nbsp;</a><a id="next" href="" class="bx-next">&nbsp;</a></div>
+	    </div>
+	    
+	          
+	  </div>
+
+	</div>
+	
+<div id="conversion-tracking"><img width="1" height="1" border="0" src="saved_resource"><img width="1" height="1" border="0" src="CB4N2L52HBA6JEK64P3DY5"></div></body></html>

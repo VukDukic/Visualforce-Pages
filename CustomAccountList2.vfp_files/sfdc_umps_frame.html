@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0066)https://na10.salesforce.com/umps/sfdc_umps_frame.html?cflag=184.36 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>UMPS JS frame</title>
+	<script type="text/javascript">
+		try {
+				var rtLib = parent.parent.umps_config["enableRTLib"];
+				var umpsUrl = parent.parent.umps_config["umpsUrl"];
+				var script = document.createElement("script");
+				script.type = "text/javascript";
+				var umpsWidgetPath = (rtLib)?"RealTimeEventLib_"+Math.round(parent.parent.umps_config["sfdcVersion"]):parent.parent.umps_config["umpsWidgetPath"];
+				var sessionId = (parent.parent.umps_config["randomMask"] && !parent.parent.umps_config["popOut"])?parent.parent.Sfdc.String.decryptXOR(parent.parent.umps_config["xoredSessionId"], parent.parent.umps_config["randomMask"]):parent.parent.umps_config["sessionId"]; 
+				script.src = umpsUrl + '/umps/'+umpsWidgetPath+'/js/sfdc_umps_script.js?cflag=' + sessionId;
+				document.getElementsByTagName("head")[0].appendChild(script);
+		}catch(e){}
+	</script><script type="text/javascript" src="sfdc_umps_script.js"></script>
+<script type="text/javascript" src="jiffy.js"></script><script type="text/javascript" src="umps-min.js"></script><script type="text/javascript" src="en_US(1).js"></script></head>
+<body>
+
+
+<iframe id="api_iframe" name="api_iframe" src="_js.html"></iframe><iframe id="api_iframe_dummy" name="api_iframe_dummy" src="_js(1).html"></iframe></body></html>

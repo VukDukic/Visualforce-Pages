@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0110)https://umps5.salesforce.com/umps/UMPSWidget_184/_js.html?cflag=192.16.2&parentUrl=https://na10.salesforce.com -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+	<script src="umps-gateway-min.js"></script>
+	<script type="text/javascript">
+		var widgetVersion = 184.36;
+	    (function(o){var z=function z(c){c=c.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]").replace(/</,"&lt;").replace(/>/,"&gt;");var d="[\\?&]"+c+"=([^&#]*)";var a=new RegExp(d);var b=a.exec(window.location.href);if(b==null){return""}else{return b[1]}};var q=function q(){umpsxdomain.receiveMessage(function(b){var c=b.data;
+var e=JSON.parse(c);if(e.method=="abort"){var a=HttpGateway.getXhrById(e.uuid);if(a){a.abort()}}else{var d=new HttpGateway(e.uuid);d.sendRequest(e.url,e.method,e.data,e.timeout,e.headers)}},y,window.parent);if(window.chrome){window.setTimeout(function(){s(JSON.stringify({originCheck:window.location.origin}))
+},10000)}};var u=function u(a){var b=a;if(b.search(/^https?\:\/\//)!=-1){b=b.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i,"")}else{b=b.match(/^([^\/?#]+)(?:[\/?#]|$)/i,"")}return b[1].match(".salesforce.com$")==".salesforce.com"||b[1].match(".cloudforce.com$")==".cloudforce.com"||b[1].match(".force.com$")==".force.com"||b[1].match("localhost$")=="localhost"
+};var t=function t(b){var a;if(b.search(/^https?\:\/\//)!=-1){b=b.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i,"");a=b[0]}else{b=b.match(/^([^\/?#]+)(?:[\/?#]|$)/i,"");a=b[1]}return a};if(o.name!=="api_iframe_dummy"){var w=window.location.host;var y=z("parentUrl");var n=z("baseSfdcUrl");var x=z("popOut");
+var p=z("connectUrl");if(!x){x=""}var r="/umps/sfdc_umps_frame.html?cflag="+widgetVersion+x;var s=function(a){umpsxdomain.postMessage(a,y,window.parent)};if(!u(y)||y.match("^http")!="http"){}else{if(w.search(/^\d+./)==0){q()}else{var v=document.createElement("IFRAME");v.id="umps_frame";v.name="umps_frame";
+v.className="iframe_js";v.src=t(y)+r;v.frameborder=0;document.body.appendChild(v)}}o.postToChild=s;o.sfdcUrl=y;o.baseSfdcUrl=n;o.connectUrl=p}})(window);
+
+	</script><iframe id="umps_frame" name="umps_frame" class="iframe_js" src="sfdc_umps_frame.html"></iframe>
+
+
+</body></html>
