@@ -1,0 +1,13 @@
+<apex:page controller="CustomAccountListController">
+  <apex:form>
+    <page:pageBlock>
+      <apex:pageBlockTable value="{!sss.Records}" var="a">
+        <apex:column value="{!a['Name']}"/>
+        <apex:column value="{!a['Rating']}"/>
+        <apex:column value="{!a['NumberOfEmployees']}"/>
+      </apex:pageBlockTable>
+      <apex:commandLink action="{!ssc.Previous}" value="Previous Page" rendered="{!ssc.HasPrevious}"/>
+      <apex:commandLink action="{!ssc.Next}" value="Next Page" rendered="{!ssc.HasNext}"/>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>
