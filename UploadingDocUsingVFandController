@@ -1,0 +1,12 @@
+<apex:page controller="FileUploadController">
+  <apex:sectionHeader title="Visualforce Example" subtitle="File Upload Example"/>
+  
+  <apex:form enctype="mulitpart/form-data">
+    <apex:pageMessages />
+    <apex:pageBlock title="Upload a File">
+    
+      <apex:pageBlockButtons >
+        <apex:commandButton action="{!upload}" value="Save"/>
+      </apex:pageBlockButtons>
+      
+      <apex:pageBlockSection showHeader="false" columns="2" id="block1">
