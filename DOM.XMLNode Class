@@ -1,0 +1,14 @@
+private String walkThrough(DOM.XMLNode node) {
+  String result = '\n';
+  if (node.getNodeType() == DOM.XMLNodeType.COMMENT) {
+    return 'Comment (' + node.getText() + ')';
+  }
+  if (node.getNodeType() == DOM.XMLNodeType.TEXT) {
+    return 'Text (' + node.getText() + ')';
+  }
+  if (node.getNodeType() == DOM.XMLNodeType.ELEMENT) {
+    result += 'Element: ' + node.getName();
+    if (node.getText().trim() != '') {
+      result += ', text=' + node.getText().trim();
+    }
+    
