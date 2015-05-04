@@ -5,4 +5,7 @@ private String arse(String toParse) {
     DOM.XMLNode root = doc.getRootElement();
     return walkThrough(root);
     
-    } catch (System.
+    } catch (System.XMLException e) { // invalid XML
+      return e.getMessage();
+    }
+  }
