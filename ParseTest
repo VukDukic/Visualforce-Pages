@@ -1,0 +1,8 @@
+private String arse(String toParse) {
+  DOM.Document doc = new DOM.Document();
+  try {
+    doc.load(toParse);
+    DOM.XMLNode root = doc.getRootElement();
+    return walkThrough(root);
+    
+    } catch (System.
