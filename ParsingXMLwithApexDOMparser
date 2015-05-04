@@ -1,0 +1,11 @@
+<apex:page controller="ParseTest" sidebar="false" showHeader="false" >
+
+  <apex:form>
+    <apex:inputTextArea cols="40" rows="20" value="{!textToParse}" />
+    <apex:inputTextArea cols="40" rows="20" id="result" value={!parsedText}"/>
+    <br />
+    <apex:commandButton value="Parse" action="{!parse}" reRender="result"/>
+    
+  </apex:form>
+  
+</apex:page>
