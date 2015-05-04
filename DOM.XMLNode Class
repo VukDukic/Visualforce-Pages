@@ -11,4 +11,16 @@ private String walkThrough(DOM.XMLNode node) {
     if (node.getText().trim() != '') {
       result += ', text=' + node.getText().trim();
     }
-    
+    if (node.getAttributeCount() > 0) {
+      for (Integer i = 0; i < node.getAttributeCount(); i++) {
+        result += ', attribute #' + i + ':' + node.getAttributeKeyAt(i) + '=' +
+node.getAttributeValue(node.getAttributeKeyAt(i), node.getAttributeKeyNsAt(i));
+      }
+    }
+    for (DOM.XMLNode child: node.getChildElements()) {
+      result += walkThrough(child);
+    }
+    return result;
+  }
+  return '': //should never reach here
+}
