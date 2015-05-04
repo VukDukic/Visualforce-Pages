@@ -1,0 +1,110 @@
+<h2>Problem</h2>
+ 
+<p>You want to parse some XML using the native Apex DOM parser.  You want your program to display attributes, as well as iterate through any child nodes.</p>
+ 
+<h2>Solution</h2>
+
+<p>This code sample demonstrates how to set up a simple test environment - it's a Visualforce page with two text areas.  You can enter your XML in the one text area, click "Parse", and see a linear result of the parse in the right text area. </p>
+
+<p>Using this code, you can experiment with the parser and the different text that you want to parse.</p>
+
+<ol>
+ <li>
+<p>Create an Apex class called *ParseTest* .   Use the code ParseText ZIP file referenced below.  The rest of this document provides a  walk through of the main parts of the code, as well as a Visualforce page that can utilise it.</p>
+
+<p>The following method checks that you're actually parsing XML.  Almost all XML parsing works like this.  You construct a new *Document* instance, and in this case use its *load()* method to parse a String.    If something goes wrong, a *System.XMLException* is thrown.</p>
+
+[code apex]
+    private String parse(String toParse) {
+      DOM.Document doc = new DOM.Document();      
+      try {
+        doc.load(toParse);    
+        DOM.XMLNode root = doc.getRootElement();
+        return walkThrough(root);
+        
+      } catch (System.XMLException e) {  // invalid XML
+        return e.getMessage();
+      }
+    }
+ [/code]
+ 
+<p>The important *DOM.XMLNode* class is the type of every node in the parsed XML.  Here we call *getRootElement()* to returned the root element of the parsed XML, and assign it to an instance of this class.  At this point you have a parsed document.  Simply walk through the parse tree by walking by accessing the nodes.  The above code calls *walkThrough()* to do this.  Here's the code:</p>
+
+[code apex]
+    private String walkThrough(DOM.XMLNode node) {
+      String result = '\n';
+      if (node.getNodeType() == DOM.XMLNodeType.COMMENT) {
+        return 'Comment (' +  node.getText() + ')';
+      }
+      if (node.getNodeType() == DOM.XMLNodeType.TEXT) {
+        return 'Text (' + node.getText() + ')';
+      }
+      if (node.getNodeType() == DOM.XMLNodeType.ELEMENT) {
+        result += 'Element: ' + node.getName();
+        if (node.getText().trim() != '') {
+          result += ', text=' + node.getText().trim();
+        }
+        if (node.getAttributeCount() > 0) { 
+          for (Integer i = 0; i< node.getAttributeCount(); i++ ) {
+            result += ', attribute #' + i + ':' + node.getAttributeKeyAt(i) + '=' + node.getAttributeValue(node.getAttributeKeyAt(i), node.getAttributeKeyNsAt(i));
+          }  
+        }
+        for (Dom.XMLNode child: node.getChildElements()) {
+          result += walkThrough(child);
+        }
+        return result;
+      }
+      return '';  //should never reach here 
+    }
+[/code]
+
+This code makes use of a lot of methods on the XMLNode class to access and recurse through the parsed XML:
+<ul>
+ <li>*getNodeType()* returns the type of the node, which will either be a comment, a text node, or an element.   The element type is the most important.  </li>
+ <li>*getName()* returns the name of the element you're currently looking at.  For example, if your node represents the XML *<foobar>* then the name will be "foobar". </foobar></li>
+ <li>*getText()* returns the text within the node.  This is often filled with whitespace - which is why I use *trim()*.</li>
+ <li>*getAttributeCount()* tells you how many attributes there are on the node.</li>
+ <li>*getAttributeKeyAt(n)* and *getAttributeKeyNsAt(n)* tell you the name and namespace of the *nth* attribute.</li>
+ <li>*getAttributeValue()* returns the value of a given attribute, given its key and namespace.  </li>
+ <li>*getChildElements()* returns the child elements of the node, if there are any. </li>
+</ul>
+
+<p>That should be enough for you to walk through any parsed XML.</p>
+
+</li>
+<li>Create a Visualforce page that uses this controller.  Here's a simple one with two fields:
+
+[code visualforce]
+<apex:page controller="ParseTest" sidebar="false" showheader="false">
+  
+   <apex:form>
+     <apex:inputtextarea cols="40" rows="20" value="{!textToParse}">
+     <apex:inputtextarea cols="40" rows="20" id="result" value="{!parsedText}">     
+     <br>
+     <apex:commandbutton value="Parse" action="{!parse}" rerender="result">
+
+   </apex:commandbutton></apex:inputtextarea></apex:inputtextarea></apex:form>
+
+</apex:page>
+[/code]
+
+The left text area contains the XML to be parsed.  When you click the button, the parser does its job, eventually calling the *walkThrough()* method above - the results are displayed in the right text area.  Here's a look at it in action.
+
+[img de]
+
+You can access the online demo by clicking the Demo link above.
+</li>
+</ol>
+ 
+<h2>Discussion</h2>
+<p>Note:</p>
+<ul>
+ <li>I haven't found the COMMENT and TEXT node types to ever appear.  I don't know why.</li>
+ <li>The HTTP response object, used when making something like an HTTP GET request, provides a *getBodyDocument()* that returns the parsed XML of the body.  For example: 
+[code apex]
+  
+  HTTPResponse res = h.send(req);
+  DOM.Document doc = res.getBodyDocument();
+[/code]
+ </li>
+</ul>
