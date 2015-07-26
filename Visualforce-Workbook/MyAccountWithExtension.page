@@ -1,0 +1,7 @@
+<apex:page standardController="Account" extensions="MyExtension">
+    <apex:form >
+        <apex:inputField value="{!account.name}"/>
+        <apex:commandButton action="{!save}" value="SAVE"/>
+    </apex:form>
+    <p>{!title}</p>
+</apex:page>
