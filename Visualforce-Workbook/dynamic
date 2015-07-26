@@ -1,0 +1,6 @@
+<apex:page standardController="Account">
+    <apex:pageBlock title="{!account.name}"/>
+    <apex:outputPanel id="detail">
+        <apex:detail subject="{!$CurrentPage.parameters.cid}" relatedList="false" title="false"/>
+    </apex:outputPanel>
+</apex:page>
