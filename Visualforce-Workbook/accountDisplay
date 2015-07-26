@@ -1,0 +1,16 @@
+apex:page showHeader="false" standardController="Account">
+<apex:relatedList List="Cases" />
+<apex:pageBlock title="Custom Output">
+<apex:pageBlockSection title="Custom Section Title" >
+<apex:outputfield value="{!account.name}" />
+<apex:outputfield value="{!account.owner.name}" />
+</apex:pageBlockSection>
+</apex:pageBlock>
+<apex:pageBlock title="My Account Contacts">
+    <apex:pageBlockTable value="{!account.contacts}" var="item">
+        <apex:column value="{! item.name}" />
+        <apex:column value="{!item.phone}"/>       
+    </apex:pageBlockTable>
+</apex:pageBlock>
+    <apex:detail />
+</apex:page>
