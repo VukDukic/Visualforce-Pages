@@ -8,7 +8,7 @@ apex:page showHeader="false" standardController="Account">
 </apex:pageBlock>
 <apex:pageBlock title="My Account Contacts">
     <apex:pageBlockTable value="{!account.contacts}" var="item">
-        <apex:column value="{! item.name}" />
+        <apex:column value="{!item.name}" />
         <apex:column value="{!item.phone}"/>       
     </apex:pageBlockTable>
 </apex:pageBlock>
