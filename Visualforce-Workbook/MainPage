@@ -1,0 +1,7 @@
+<apex:page sidebar="false" showHeader="false">
+    <apex:composition template="BasicTemplate">
+        <apex:define name="body">
+            <p> This is Vuk....</p>
+        </apex:define>
+    </apex:composition>
+</apex:page>
