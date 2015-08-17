@@ -1,0 +1,42 @@
+<apex:page controller="GoogleChartsController" sidebar="false"> 
+    <!-- Google API inclusion -->
+    <apex:includeScript id="a" value="https://www.google.com/jsapi" />
+     
+    <apex:sectionHeader title="Google Charts + Javascript Remoting" subtitle="Demoing - Opportunities by Exepected Revenue"/>
+ 
+    <!-- Google Charts will be drawn in this DIV -->
+    <div id="chartBlock" />
+     
+    <script type="text/javascript">
+        // Load the Visualization API and the piechart package.
+        google.load('visualization', '1.0', {'packages':['corechart']});
+       
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.setOnLoadCallback(initCharts);
+   
+        function initCharts() {         
+          // Following the usual Remoting syntax
+          // [<namespace>.]<controller>.<method>([params...,] <callbackFunction>(result, event) {...}
+          // controller : GoogleChartsController
+          // method : loadOpps
+          GoogleChartsController.loadOpps( 
+                 function(result, event){  
+                     // load Column chart
+                     var visualization = new google.visualization.ColumnChart(document.getElementById('chartBlock'));
+                     // Prepare table model for chart with columns
+                     var data = new google.visualization.DataTable();
+                     data.addColumn('string', 'Opportunity');
+                     data.addColumn('number', 'Expected Revenue');
+                     data.addColumn('number', 'Amount');    
+                     // add rows from the remoting results
+                     for(var i =0; i<result.length;i++){
+                        var r = result[i];
+                        data.addRow([r.Name, r.ExpectedRevenue, r.Amount]); 
+                      }
+                    // all done, lets draw the chart with some options to make it look nice.
+                    visualization.draw(data, {legend : {position: 'top', textStyle: {color: 'blue', fontSize: 10}}, width:window.innerWidth,vAxis:{textStyle:{fontSize: 10}},hAxis:{textStyle:{fontSize: 10},showTextEvery:1,slantedText:false}});
+              }, {escape:true});
+          } 
+    </script>
+</apex:page>
+ 
