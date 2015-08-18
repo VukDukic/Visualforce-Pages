@@ -1,0 +1,16 @@
+<apex:page controller="RealChartController2" showHeader="false" readOnly="true">
+    <apex:chart width="600" height="275" data="{!data}">
+        <apex:axis type="Numeric" position="left" fields="numOppsClosedWon"
+            title="Opportunities Closed" grid="true"/>
+        <apex:axis type="Numeric" position="right" fields="monthlyRevenue"
+            title="Revenue (US$)"/>
+        <apex:axis type="Category" position="bottom" fields="theMonth"
+            title="2011">
+        </apex:axis>
+        <apex:barSeries title="Monthly Sales" orientation="vertical"
+            axis="right" xField="theMonth" yField="monthlyRevenue"/>
+        <apex:lineSeries title="Closed-Won"
+            axis="left" xField="theMonth" yField="numOppsClosedWon"
+            markerType="circle" markerSize="4" markerFill="#00FF00"/>
+    </apex:chart>
+</apex:page>
