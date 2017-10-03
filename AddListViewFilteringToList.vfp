@@ -8,3 +8,8 @@
         <apex:selectOptions value="{! listViewOptions }"/>
         <apex:actionSupport event="onchange" reRender="contacts_list"/>
       </apex:selectList>
+
+      <!-- Contacts List -->
+      <apex:pageBlockTable value="{! contacts }" var="ct">
+        
+      </apex:pageBlockTable>
