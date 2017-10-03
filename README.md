@@ -6,3 +6,5 @@
 * `{! filterId }` to set the list view filter to use for a standard list controller’s results
 * `<apex:form>` - To change the list view filter for a standard list controller, you need to submit the new value back to the server. The standard way to perform this submit is using a form created using the <apex:form> component.
 * `reRender="contacts_list"` attribute on the `<apex:actionSupport>` component - AJAX - list is updating without reloading the whole page
+* `$Resource` - global variable to reference static resources
+* 
