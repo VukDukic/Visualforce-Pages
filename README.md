@@ -12,4 +12,5 @@
 * `<apex:stylesheet>` (for CSS stylesheets) 
 * `<apex:image>` (for graphics files)
 * `URLFOR()` function can combine a reference to a zipped static resource and a relative path to an item within it to create a URL that can be used with Visualforce components that reference static assets.
+* 
 
