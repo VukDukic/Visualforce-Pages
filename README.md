@@ -1,5 +1,7 @@
 # Visualforce - Iteration Components :ok_hand:
 
+* `Getter methods` pull data out of your controller onto your page.
+* `Setter methods` submit values from the page back to the controller.
 * `sortOrder` - private member variable
 * `getContacts()` - public method
 * action methods - respond to user activity
