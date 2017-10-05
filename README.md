@@ -9,6 +9,7 @@
 public MyObject__c myVariable { get; set; }
 ```
 * Properties can be public or private, and can be read-only, or even write-only, by omitting the get or set.
+* There is no specific order in which getters or setters (or properties, if you use them) are called, so you must not introduce order-of-execution dependencies between them.
 
 ##
 * `sortOrder` - private member variable
