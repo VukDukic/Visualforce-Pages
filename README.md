@@ -2,6 +2,14 @@
 
 * `Getter methods` pull data out of your controller onto your page.
 * `Setter methods` submit values from the page back to the controller.
+
+## Apex Properties
+* Properties are a combination of a variable with `getter` and `setter` methods, with a syntax that groups them together more clearly. 
+```Apex
+public MyObject__c myVariable { get; set; }
+```
+
+##
 * `sortOrder` - private member variable
 * `getContacts()` - public method
 * action methods - respond to user activity
