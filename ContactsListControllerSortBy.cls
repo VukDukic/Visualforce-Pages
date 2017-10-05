@@ -1,6 +1,4 @@
 public class ContactsListController {
-
-    private String sortOrder = 'LastName';
     
     public List<Contact> getContacts() {
     
@@ -11,4 +9,5 @@ public class ContactsListController {
           'LIMIT 10'
       );
       return results;
+    }
 }
