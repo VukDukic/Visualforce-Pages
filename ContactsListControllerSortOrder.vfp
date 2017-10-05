@@ -6,7 +6,9 @@
         <apex:pageBlockTable value="{! contacts }" var="ct">
         
           <apex:column value="{! ct.FirstName }"/>
-          
+          <apex:column value="{! ct.LastName }"/>
+          <apex:column value="{! ct.Title }"/>
+          <apex:column value="{! ct.Email }"/>
         
      </apex:pageBlock>
    </apex:form>
