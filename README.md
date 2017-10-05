@@ -8,6 +8,7 @@
 ```Apex
 public MyObject__c myVariable { get; set; }
 ```
+* Properties can be public or private, and can be read-only, or even write-only, by omitting the get or set.
 
 ##
 * `sortOrder` - private member variable
