@@ -1,4 +1,4 @@
-# Visualforce - Iteration Components :ok_hand:
+# Visualforce  :ok_hand:
 
 * `Getter methods` pull data out of your controller onto your page.
 * `Setter methods` submit values from the page back to the controller.
@@ -14,6 +14,8 @@ public MyObject__c myVariable { get; set; }
 * `getContacts()` - public method
 * action methods - respond to user activity
 * [Salesforce Stack Exchange](https://salesforce.stackexchange.com/questions/91894/visualforce-page-records-not-linking-to-their-detail-pages)
+
+## Iteration Components
 * `<apex:pageBlockTable>` - to display list of records
 * `recordSetVar` - sets the name of the variable to be created with the collection of records
 * `value` - attribute of `<apex:pageBlockTable>` is set to the variable loaded by the standard list controller, `{! contacts }`
