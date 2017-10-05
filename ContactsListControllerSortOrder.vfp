@@ -1,1 +1,2 @@
-
+<apex:page controller="ContactListController">
+  <apex:form>
