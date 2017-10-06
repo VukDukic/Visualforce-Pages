@@ -1,0 +1,5 @@
+<apex:page standardController="Article__c">
+  <apex:form>
+    <apex:pageBlockButtons location="top">
+  </apex:form>
+    
