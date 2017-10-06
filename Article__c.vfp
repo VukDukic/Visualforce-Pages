@@ -1,5 +1,9 @@
 <apex:page standardController="Article__c">
   <apex:form>
-    <apex:pageBlockButtons location="top">
+    <apex:pageBlock mode="detail"> 
+      <apex:pageBlockButtons location="top">
+        
+      </apex:pageBlockButtons>
+    </apex:pageBlock>
   </apex:form>
     
