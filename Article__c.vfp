@@ -2,7 +2,8 @@
   <apex:form>
     <apex:pageBlock mode="detail"> 
       <apex:pageBlockButtons location="top">
-        
+        <apex:commandButton action="{!edit}" value="Edit"/>
+        <apex:commandButton action="{!delete}" value="Delete"/>
       </apex:pageBlockButtons>
     </apex:pageBlock>
   </apex:form>
