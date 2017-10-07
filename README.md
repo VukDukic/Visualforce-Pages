@@ -1,4 +1,4 @@
-# Visualforce  :ok_hand: :astronaut:
+# Visualforce  :ok_hand: :star:
 
 * `Getter methods` pull data out of your controller onto your page.
 * `Setter methods` submit values from the page back to the controller.
